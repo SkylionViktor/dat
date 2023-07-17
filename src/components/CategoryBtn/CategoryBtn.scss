@@ -1,0 +1,136 @@
+.category{
+   align-self: start;
+   width: 100%;
+   margin-top: 40px;
+   flex: 1 1 auto;
+   @media (max-width:920px) {
+      margin-top: 19px;
+   }
+   // &_container{}
+
+   &_body{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 23px;
+      height: auto;
+      transition: height .3s ease-in-out;
+      @media (max-width:920px) {
+         flex-direction: column;
+         gap: 15px;
+      }
+   }
+
+   &_btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 14px;
+      font-weight: 600;
+      width: 220px;
+      height: 40px;
+      gap: 6px;
+      border-radius: 20px;
+      padding: 3px 5px;
+      border: 1px solid #1E6140;
+      cursor: pointer;
+      &:hover{
+         color: #FFF;
+         background: #E74E13;
+         border: none;
+         .category_img-green{
+            display: none;
+         }
+         .category_img-white{
+            display: block;
+         }
+      }
+      transition: all .3s;
+   }
+
+   &_img{
+      width: 24px;
+      height: 24px;
+      img{
+         width: 100%;
+         object-fit: contain;
+      }
+   }
+
+   &_img-white{
+      display: none;
+   }
+
+   &_btn-mob{
+      width: 100%;
+      padding: 17px 18px;
+   }
+   &_btn-text{
+      flex: 1 1 auto;
+   }
+   &_btn-mob-active{
+      color: #FFF;
+      background: #E74E13;
+      border: none;
+   }
+   &_img-mob{
+      &.category_img-white{
+         display: block;
+      }
+   }
+   &_btn-pop-up{
+      width: 100%;
+   }
+   &_pop-up{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      height: 0;
+      opacity: 0;
+      .category_btn-mob{
+         height: 0;
+         line-height: 0;
+         padding: 0;
+         transition: all .3s  ease-in-out;
+      }
+      transition: all .3s  ease-in-out;
+      pointer-events: none;
+   }
+   
+   &_arrow{
+      transition: all .3s;
+   }
+   &_arrow-active{
+      transform: rotate(180deg);
+      transition: all .3s;
+   }
+   &_pop-up-open{
+      height: auto;
+      transition: all .3s  ease-in-out;
+      pointer-events: all;
+      .category_btn-mob{
+         height: 40px;
+         line-height: 14px;
+         padding: 17px  18px;
+         transition: all .3s  ease-in-out;
+      }
+   }
+}
+@keyframes popUpOpen {
+   0%{
+      height: 0;
+   }
+   100%{
+      height: auto;
+   }
+}
+@keyframes popUpCloses {
+   0%{
+      height: auto;
+   }
+   100%{
+      height: 0;
+   }
+}

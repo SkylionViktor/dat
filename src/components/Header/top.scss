@@ -1,0 +1,220 @@
+.bg{
+   background-color: #1E6140;
+}
+.top-panell{
+   position: relative;
+   color: #FFF;
+   font-size: 16px;
+   font-family: Montserrat;
+   font-weight: 300;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 52px;
+   z-index: 10;
+   @media (max-width:1190px){
+      gap: 30px;
+   }
+   @media (max-width:1025px) {
+      gap: 20px;
+      font-size: 14px;
+   }
+   @media (max-width:920px) {
+      height: 50px;
+      justify-content: space-between;
+      font-size: 18px;
+      .log-out{
+         position: relative;
+         z-index: 10;
+      }
+      nav{
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         z-index: 0;
+         height: 100vh;
+         background-color: #1E6140;
+         transition: all .3s ease-in-out;
+         transform: translate(-110%, 0);
+         padding-top: 46px;
+         &.visible{
+            top: 0;
+            transition: all .3s ease-in-out;
+            transform: translate(0, 0);
+         }
+         ul{
+            margin-top: 10px;
+            overflow: auto;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+            font-size: 22px;
+            gap: 46px;
+            padding-bottom: 46px;
+            &::before{
+               content: '';
+               display: block;
+               width: 289px;
+               min-height: 1px;
+               background: rgba(255, 255, 255, 0.10);
+            }
+            li{
+               height: auto;
+            }
+         }
+      }
+   }
+
+}
+.top-panell-ul{
+   display: flex;
+   height: 50px;
+   justify-content: flex-start;
+   align-items: center;
+   gap: 50px;
+   @media (max-width:1190px){
+      gap: 25px;
+   }
+   @media (max-width:1025px){
+      gap: 15px;
+      height: 40px;
+   }
+}
+li{
+   height: 100%;
+   display: flex;
+   align-items: center;
+}
+.popup-btn{
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   cursor: pointer;
+   padding: 0 5px;
+   transition: all .3s;
+   @media (max-width:920px) {
+         display: none;
+      }
+}
+.popup-btn img{
+   transition: all .3s;
+   
+}
+
+.top-popUp{
+   opacity: 0;
+   position: absolute;
+   width: 221px;
+   height: 0;
+   top: 100%;
+   left: 0;
+   background: #347153;
+   border-radius: 0px 0px 20px 20px;
+   transition: all .3s;
+   pointer-events: none;
+   @media (max-width:1190px){
+      width: 195px;
+   }
+}
+.top-popUp-ul{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   justify-content: start;
+   padding: 12px 18px;
+}
+.mob-link{
+   display: none;
+   @media (max-width:920px) {
+      display: block;
+   }
+}
+div.dec{
+   height:50px;
+   width: 1px;
+   background: #FFF;
+   background: rgba(255, 255, 255, 0.20);
+   @media (max-width:1025px) {
+      height: 40px;
+   }
+   @media (max-width:920px) {
+      display: none;
+   }
+}
+
+.log-out{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+}
+.popup-btn-click{
+   background: #347153;
+   transition: all .3s;
+}
+.popup-btn-click img{
+   transform: rotate(180deg);
+   transition: all .3s;
+}
+.top-popUp-open{
+   height: 133px;
+   transition: all .3s;
+   pointer-events: auto;
+}
+// @media (max-width:1170px) {
+//    .top-panell{
+//       gap: 30px;
+//    }
+//    .top-panell-ul{
+//       gap: 25px;
+//    }
+//    .top-popUp{
+//       width: 195px;
+//    }
+// }
+.brg{
+   display: none;
+   position: relative;
+   @media (max-width:920px) {
+      display: block;
+      width: 28px;
+      height: 28px;
+   }
+   &_dec{
+      position: absolute;  
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      img{
+         width: 100%;
+      }
+   }
+   .brg_close{
+      transform: scale(0);
+      transition: all  .3s;
+   }
+   .brg_open{
+      transform: scale(1);
+      transition: all  .3s;
+   }
+   &.open{
+      .brg_close{
+         transform: scale(1);
+         transition: all  .3s;
+      }
+      .brg_open{
+         transform: scale(0);
+         transition: all  .3s;
+      }
+
+   }
+}
+
